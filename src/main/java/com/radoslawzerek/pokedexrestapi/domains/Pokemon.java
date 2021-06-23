@@ -6,10 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,14 +21,14 @@ public class Pokemon {
     @Column(name = "POKEMON_ID", unique = true)
     private Long pokemonId;
 
+    @Column(name = "NAME")
+    private String name;
+
     @Column(name = "DEFENCE")
     private int defence;
 
     @Column(name = "ATTACK")
     private int attack;
-
-    @Column(name = "NAME")
-    private String name;
 
     @Column(name = "TYPE")
     private String type;

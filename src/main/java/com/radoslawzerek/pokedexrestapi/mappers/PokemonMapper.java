@@ -1,7 +1,7 @@
 package com.radoslawzerek.pokedexrestapi.mappers;
 
 import com.radoslawzerek.pokedexrestapi.domains.Pokemon;
-import com.radoslawzerek.pokedexrestapi.domains.PokemonDto;
+import com.radoslawzerek.pokedexrestapi.dto.PokemonDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,18 +12,18 @@ public class PokemonMapper {
 
     public Pokemon mapToPokemon(final PokemonDto pokemonDto) {
         return new Pokemon(pokemonDto.getPokemonId(),
+                pokemonDto.getName(),
                 pokemonDto.getAttack(),
                 pokemonDto.getDefence(),
-                pokemonDto.getName(),
                 pokemonDto.getType()
         );
     }
 
     public PokemonDto mapToPokemonDto(final Pokemon pokemon) {
         return new PokemonDto(pokemon.getPokemonId(),
+                pokemon.getName(),
                 pokemon.getAttack(),
                 pokemon.getDefence(),
-                pokemon.getName(),
                 pokemon.getType()
         );
     }

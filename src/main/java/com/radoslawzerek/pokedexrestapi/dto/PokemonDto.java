@@ -1,4 +1,4 @@
-package com.radoslawzerek.pokedexrestapi.domains;
+package com.radoslawzerek.pokedexrestapi.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,8 +8,8 @@ import lombok.Getter;
 public class PokemonDto {
 
     private Long pokemonId;
+    private String name;
     private int attack;
     private int defence;
-    private String name;
     private String type;
 }

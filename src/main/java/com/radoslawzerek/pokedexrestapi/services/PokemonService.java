@@ -2,7 +2,7 @@ package com.radoslawzerek.pokedexrestapi.services;
 
 import com.radoslawzerek.pokedexrestapi.dao.PokemonDao;
 import com.radoslawzerek.pokedexrestapi.domains.Pokemon;
-import com.radoslawzerek.pokedexrestapi.domains.PokemonDto;
+import com.radoslawzerek.pokedexrestapi.dto.PokemonDto;
 import com.radoslawzerek.pokedexrestapi.exceptions.PokemonNotFoundException;
 import com.radoslawzerek.pokedexrestapi.mappers.PokemonMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,8 +34,16 @@ public class PokemonService {
         pokemonDao.save(pokemonMapper.mapToPokemon(pokemonDto));
     }
 
-    public Optional<Pokemon> findPokemonById (final Long id) {
+    /*public Optional<Pokemon> findPokemonById (final Long id) {
         return pokemonDao.findById(id);
+    }*/
+
+    public Optional<Pokemon> findPokemonByName(final String name) {
+        return pokemonDao.findByName(name);
+    }
+
+    public Optional<Pokemon> findPokemonByType(final String type) {
+        return pokemonDao.findByType(type);
     }
 
     public PokemonDto updatePokemon(Long id, PokemonDto pokemonDto) throws PokemonNotFoundException {

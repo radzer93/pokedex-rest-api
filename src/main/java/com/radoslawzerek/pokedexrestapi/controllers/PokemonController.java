@@ -26,6 +26,11 @@ public class PokemonController {
         return pokemonService.getAllPokemons();
     }
 
+    @GetMapping("/pageWithAllPokemons/{pageNo}/{pageSize}")
+    public List<Pokemon> getPage(@PathVariable int pageNo, @PathVariable int pageSize){
+        return pokemonService.getPage(pageNo, pageSize);
+    }
+
     @GetMapping("/getPokemon/{pokemonId}")
     @ResponseStatus(HttpStatus.OK)
     public PokemonDto getPokemon(@PathVariable Long pokemonId) throws PokemonNotFoundException {

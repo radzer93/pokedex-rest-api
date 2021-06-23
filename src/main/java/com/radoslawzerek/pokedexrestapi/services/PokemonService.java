@@ -34,10 +34,6 @@ public class PokemonService {
         pokemonDao.save(pokemonMapper.mapToPokemon(pokemonDto));
     }
 
-    /*public Optional<Pokemon> findPokemonById (final Long id) {
-        return pokemonDao.findById(id);
-    }*/
-
     public Optional<Pokemon> findPokemonByName(final String name) {
         return pokemonDao.findByName(name);
     }

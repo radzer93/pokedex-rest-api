@@ -15,6 +15,10 @@ import javax.persistence.*;
 @Entity(name = "POKEMONS")
 public class Pokemon {
 
+   public Pokemon(String name) {
+       this.name = name;
+   }
+
     @Id
     @GeneratedValue
     @NotNull

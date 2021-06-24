@@ -1,0 +1,7 @@
+INSERT INTO pokemons (pokemon_id, attack, defence, name, type)
+VALUES ('1', '8', '4', 'Pikachu', 'Electric'),
+       ('2', '4', '2', 'Squirtle', 'Water'),
+       ('3', '6', '5', 'Bulbasaur', 'Grass'),
+       ('4', '3', '7', 'Charmander', 'Fire'),
+       ('5', '7', '3', 'Machop', 'Rock'),
+       ('6', '5', '4', 'Snorlax', 'Normal');

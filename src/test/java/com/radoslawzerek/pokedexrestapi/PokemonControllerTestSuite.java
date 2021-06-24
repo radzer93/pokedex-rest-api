@@ -2,6 +2,8 @@ package com.radoslawzerek.pokedexrestapi;
 
 import com.radoslawzerek.pokedexrestapi.dao.PokemonDao;
 import com.radoslawzerek.pokedexrestapi.domains.Pokemon;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.Assert.*;
@@ -21,6 +23,16 @@ public class PokemonControllerTestSuite {
 
     @Autowired
     private PokemonDao pokemonDao;
+
+    /*'testGetAllPokemons' and 'testDeletePokemon' do not pass after rerunning the tests,
+    the reason being that 'testGetAllPokemons' leaves objects in DB.
+    Attempts to fix this by annotating '@Transactional' or adding a 'CleanUp' section to the test failed.
+    '@BeforeEach' solved the problem.*/
+
+    @BeforeEach
+    public void beforeAllTests() {
+        pokemonDao.deleteAll();
+    }
 
     @Test
     public void testSavePokemon() {
@@ -38,7 +50,7 @@ public class PokemonControllerTestSuite {
     @Test
     public void testFindPokemon() {
         //Given
-        Pokemon pokemon = new Pokemon(1L, "Pikachu", 4, 5, "Electric");
+        Pokemon pokemon = new Pokemon("Pikachu", "Electric");
 
         //When
         pokemonDao.save(pokemon);
@@ -47,12 +59,27 @@ public class PokemonControllerTestSuite {
         String type = pokemon.getType();
 
         //Then
-        ArrayList<Pokemon> pokemons = new ArrayList<>();
-        pokemons.add(pokemon);
+        List<Pokemon> pokemonList = pokemonDao.findAll();
+        assertEquals(pokemonId, pokemonList.get(0).getPokemonId());
+        assertEquals(name, pokemonList.get(0).getName());
+        assertEquals(type, pokemonList.get(0).getType());
+    }
 
-        assertEquals(pokemonId, pokemons.get(0).getPokemonId());
-        assertEquals(name, pokemons.get(0).getName());
-        assertEquals(type, pokemons.get(0).getType());
+    @Test
+    public void testGetAllPokemons() {
+        //Given
+        Pokemon pokemon0 = new Pokemon("Charmander");
+        Pokemon pokemon1 = new Pokemon("Squirtle");
+        Pokemon pokemon2 = new Pokemon("Bulbasaur");
+
+        //When
+        pokemonDao.save(pokemon0);
+        pokemonDao.save(pokemon1);
+        pokemonDao.save(pokemon2);
+
+        //Then
+        List<Pokemon> pokemonList = pokemonDao.findAll();
+        assertEquals(3, pokemonList.size());
     }
 
     @Test
@@ -65,7 +92,8 @@ public class PokemonControllerTestSuite {
         pokemonDao.deleteById(pokemon.getPokemonId());
 
         //Then
-        assertFalse(pokemonDao.existsById(pokemon.getPokemonId()));
+        List<Pokemon> pokemonList = pokemonDao.findAll();
+        assertEquals(0, pokemonList.size());
     }
 
     @Test

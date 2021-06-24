@@ -19,6 +19,11 @@ public class Pokemon {
        this.name = name;
    }
 
+   public Pokemon(String name, String type) {
+       this.name = name;
+       this.type = type;
+   }
+
     @Id
     @GeneratedValue
     @NotNull

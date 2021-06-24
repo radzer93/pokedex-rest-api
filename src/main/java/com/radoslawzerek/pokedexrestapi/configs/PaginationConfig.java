@@ -1,4 +1,4 @@
-package com.radoslawzerek.pokedexrestapi.pagination;
+package com.radoslawzerek.pokedexrestapi.configs;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -20,7 +20,7 @@ public class PokemonController {
 
     private final PokemonService pokemonService;
 
-    @GetMapping("/getAllPokemons")
+    @GetMapping("/findAllPokemons")
     @ResponseStatus(HttpStatus.OK)
     public List<PokemonDto> getAllPokemons() {
         return pokemonService.getAllPokemons();
@@ -31,7 +31,7 @@ public class PokemonController {
         return pokemonService.getPage(pageNo, pageSize);
     }
 
-    @GetMapping("/getPokemon/{pokemonId}")
+    @GetMapping("/findPokemon/{pokemonId}")
     @ResponseStatus(HttpStatus.OK)
     public PokemonDto getPokemon(@PathVariable Long pokemonId) throws PokemonNotFoundException {
         return pokemonService.getPokemon(pokemonId);
@@ -45,7 +45,7 @@ public class PokemonController {
 
     @GetMapping("/findPokemonByType")
     @ResponseStatus(HttpStatus.OK)
-    public Optional<Pokemon> findByType(@RequestParam String pokemonType) throws PokemonNotFoundException {
+    public Optional<Pokemon> findByType(@RequestParam String pokemonType) {
         return pokemonService.findPokemonByType(pokemonType);
     }
 

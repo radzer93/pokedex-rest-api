@@ -5,5 +5,5 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PokemonPaginationDao extends PagingAndSortingRepository<Pokemon, Integer> {
+public interface PokemonPaginationDao extends PagingAndSortingRepository<Pokemon, Long> {
 }

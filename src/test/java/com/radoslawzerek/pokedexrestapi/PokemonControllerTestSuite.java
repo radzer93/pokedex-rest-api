@@ -2,7 +2,6 @@ package com.radoslawzerek.pokedexrestapi;
 
 import com.radoslawzerek.pokedexrestapi.dao.PokemonDao;
 import com.radoslawzerek.pokedexrestapi.domains.Pokemon;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;

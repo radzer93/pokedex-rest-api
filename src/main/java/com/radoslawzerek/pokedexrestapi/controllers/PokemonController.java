@@ -39,13 +39,13 @@ public class PokemonController {
 
     @GetMapping("/findPokemonByName")
     @ResponseStatus(HttpStatus.OK)
-    public Optional<Pokemon> findByName(@RequestParam String pokemonName) throws PokemonNotFoundException {
+    public Optional<Pokemon> findByName(@RequestParam String pokemonName) {
         return pokemonService.findPokemonByName(pokemonName);
     }
 
     @GetMapping("/findPokemonByType")
     @ResponseStatus(HttpStatus.OK)
-    public Optional<Pokemon> findByType(@RequestParam String pokemonType) throws PokemonNotFoundException {
+    public Optional<Pokemon> findByType(@RequestParam String pokemonType) {
         return pokemonService.findPokemonByType(pokemonType);
     }
 

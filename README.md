@@ -28,7 +28,7 @@ Project is only available at this repository at this moment.
 
 Project can be launched locally by executing EcommerceeApplication class, which starts up the Spring ApplicationContext.
 While on it can be accesed via [local address](http://localhost:8080).
-![alt Main Page](./img/whitePage.png)
+![alt Main Page](./img/whitePage.PNG)
 
 # 5. Endpoints description
 

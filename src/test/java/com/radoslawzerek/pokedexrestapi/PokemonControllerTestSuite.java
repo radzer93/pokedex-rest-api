@@ -29,7 +29,7 @@ public class PokemonControllerTestSuite {
     '@BeforeEach' solved the problem.*/
 
     @BeforeEach
-    public void beforeAllTests() {
+    public void beforeEachTest() {
         pokemonDao.deleteAll();
     }
 

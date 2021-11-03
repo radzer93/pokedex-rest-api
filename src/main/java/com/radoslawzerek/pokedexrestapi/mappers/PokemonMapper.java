@@ -1,5 +1,9 @@
 package com.radoslawzerek.pokedexrestapi.mappers;
 
+/**
+ * Author: Radosław Żerek
+ */
+
 import com.radoslawzerek.pokedexrestapi.domains.Pokemon;
 import com.radoslawzerek.pokedexrestapi.dto.PokemonDto;
 import org.springframework.stereotype.Service;

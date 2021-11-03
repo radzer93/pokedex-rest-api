@@ -1,5 +1,9 @@
 package com.radoslawzerek.pokedexrestapi.configs;
 
+/**
+ * Author: Radosław Żerek
+ */
+
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.domain.Page;

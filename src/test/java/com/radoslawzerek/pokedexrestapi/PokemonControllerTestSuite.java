@@ -1,5 +1,9 @@
 package com.radoslawzerek.pokedexrestapi;
 
+/**
+ * Author: Radosław Żerek
+ */
+
 import com.radoslawzerek.pokedexrestapi.dao.PokemonDao;
 import com.radoslawzerek.pokedexrestapi.domains.Pokemon;
 import org.junit.jupiter.api.BeforeEach;

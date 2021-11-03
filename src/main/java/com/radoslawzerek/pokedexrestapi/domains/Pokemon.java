@@ -1,5 +1,9 @@
 package com.radoslawzerek.pokedexrestapi.domains;
 
+/**
+ * Author: Radosław Żerek
+ */
+
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

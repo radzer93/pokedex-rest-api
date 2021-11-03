@@ -1,5 +1,9 @@
 package com.radoslawzerek.pokedexrestapi.controllers;
 
+/**
+ * Author: Radosław Żerek
+ */
+
 import com.radoslawzerek.pokedexrestapi.domains.Pokemon;
 import com.radoslawzerek.pokedexrestapi.dto.PokemonDto;
 import com.radoslawzerek.pokedexrestapi.exceptions.PokemonNotFoundException;

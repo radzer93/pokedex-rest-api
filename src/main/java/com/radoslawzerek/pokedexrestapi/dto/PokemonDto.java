@@ -1,5 +1,9 @@
 package com.radoslawzerek.pokedexrestapi.dto;
 
+/**
+ * Author: Radosław Żerek
+ */
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

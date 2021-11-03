@@ -1,5 +1,9 @@
 package com.radoslawzerek.pokedexrestapi.services;
 
+/**
+ * Author: Radosław Żerek
+ */
+
 import com.radoslawzerek.pokedexrestapi.dao.PokemonDao;
 import com.radoslawzerek.pokedexrestapi.dao.PokemonPaginationDao;
 import com.radoslawzerek.pokedexrestapi.domains.Pokemon;
